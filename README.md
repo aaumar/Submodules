@@ -1,8 +1,9 @@
 # Submodules CMake Tutorial
 
 **NOTES**: 
-- This page is intended for personal use
-- It is based on Windows OS
+- This page is intended for personal use.
+- It is based on Windows OS.
+- The goal is to use CppAD as submodule of the project.
 
 ## Requirement
 
@@ -63,3 +64,5 @@ explanation:
     - Click play button on the bottom of your VSCode to build and run your program. 
     - Edit and save your CMakeLists.txt to update your current build.
 
+## To-do Lists
+- [ ] Auto download submodule when running cmake
