@@ -65,4 +65,4 @@ explanation:
     - Edit and save your CMakeLists.txt to update your current build.
 
 ## To-do Lists
-- [ ] Auto download submodule when running cmake
+- [x] Auto download submodule when running cmake
