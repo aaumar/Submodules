@@ -1,0 +1,3 @@
+[submodule "external/cppad"]
+	path = external/cppad
+	url = https://github.com/coin-or/CppAD.git
