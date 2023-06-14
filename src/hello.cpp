@@ -1,6 +1,6 @@
-#include <hello.h>
+#include <hello.hpp>
 #include <iostream>
 
 void hello(){
-    std::cout << "Hello there! \n";
+    std::cout << "Hello there! testing new \n";
 }
