@@ -25,11 +25,11 @@ pacman -Ss cmake
 to install specific mingw64 version, use the following  
 ```
 pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-gcc-fortran
-pacman -S mingw-w64-x86_64-cmake
+pacman -S mingw-w64-x86_64-cmake mingw-w64-x86_64-make
 ```
 5. Install packages required for ipopt  
 ```
-pacman -S binutils diffutils git grep make patch pkg-config mingw-w64-x86_64-lapack mingw-w64-x86_64-metis
+pacman -S binutils diffutils git grep patch pkg-config mingw-w64-x86_64-lapack mingw-w64-x86_64-metis
 ```
 6. Install MUMPS Linear Solver  
 ```
@@ -37,8 +37,8 @@ git clone https://github.com/coin-or-tools/ThirdParty-Mumps.git
 cd ThirdParty-Mumps
 ./get.Mumps
 ./configure
-ninja -j4
-ninja install
+make -j4
+make install
 ```
 7. Install IPOPT  
 ```
@@ -47,9 +47,9 @@ cd Ipopt
 mkdir build
 cd build
 ../configure
-ninja -j4
-ninja test
-ninja install
+make -j4
+make test
+make install
 ```
 8. Add `C:\msys64\mingw64\bin` to PATH (assuming that you install MSYS2 into `C:msys64\`)
 
