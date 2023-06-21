@@ -18,33 +18,39 @@
 3. Update the MSYS2 using the following command  
 `$ pacman -Syuu`
 4. Install gcc, make, and cmake in MSYS2. Since mingw64 environment of MSYS2 is recommended to use when using CMake, so we install specific mingw version of all the package. For searching a package, you can use the following command
-`pacman -Ss gcc`  
-`pacman -Ss make`  
-`pacman -Ss cmake`  
+```
+pacman -Ss gcc
+pacman -Ss cmake
+```
 to install specific mingw64 version, use the following  
-`pacman -S mingw-w64-x86_64-gcc`  
-`pacman -S mingw-w64-x86_64-make`  
-`pacman -S mingw-w64-x86_64-cmake`
+```
+pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-gcc-fortran
+pacman -S mingw-w64-x86_64-cmake
+```
 5. Install packages required for ipopt  
-`pacman -S binutils diffutils git grep make patch pkg-config`  
-`pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-gcc-fortran`  
-`pacman -S mingw-w64-x86_64-lapack mingw-w64-x86_64-metis`
+```
+pacman -S binutils diffutils git grep make patch pkg-config mingw-w64-x86_64-lapack mingw-w64-x86_64-metis
+```
 6. Install MUMPS Linear Solver  
-`git clone https://github.com/coin-or-tools/ThirdParty-Mumps.git`  
-`cd ThirdParty-Mumps`  
-`./get.Mumps`  
-`./configure`  
-`make`  
-`make install`
+```
+git clone https://github.com/coin-or-tools/ThirdParty-Mumps.git
+cd ThirdParty-Mumps
+./get.Mumps
+./configure
+ninja -j4
+ninja install
+```
 7. Install IPOPT  
-`git clone https://github.com/coin-or/Ipopt.git`  
-`cd Ipopt`  
-`mkdir build`  
-`cd build`  
-`../configure`  
-`make`  
-`make test` (OPTIONAL)  
-`make install`
+```
+git clone https://github.com/coin-or/Ipopt.git
+cd Ipopt
+mkdir build
+cd build
+../configure
+ninja -j4
+ninja test
+ninja install
+```
 8. Add `C:\msys64\mingw64\bin` to PATH (assuming that you install MSYS2 into `C:msys64\`)
 
 ## Building the package
